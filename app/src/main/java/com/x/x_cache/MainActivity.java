@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         CacheLoaderConfiguration config = new CacheLoaderConfiguration(this, new HashCodeFileNameGenerator(), 1024 * 1024 * 1024*64, 200000, memoryCache,60*24*30*365*20);
         CacheLoaderManager.getInstance().init(config);
 
+        CacheLoaderManager.getInstance().loadSerializable("Test");
 
 
 
