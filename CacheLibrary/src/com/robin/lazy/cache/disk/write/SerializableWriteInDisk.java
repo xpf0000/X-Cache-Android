@@ -12,7 +12,7 @@
 package com.robin.lazy.cache.disk.write;
 
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 
 import java.io.IOException;
@@ -40,9 +40,9 @@ public class SerializableWriteInDisk<V extends Serializable> extends WriteInDisk
 			objectOut.flush();
 			isSucce=true;
 		} catch (IOException e) {
-			LazyLogger.e(e, "Serialzable写入缓存错误");
+			//LazyLogger.e(e, "Serialzable写入缓存错误");
 		}catch (Exception e) {
-			LazyLogger.e(e, "Serialzable写入缓存错误");
+			//LazyLogger.e(e, "Serialzable写入缓存错误");
 		}finally{
 			IoUtils.closeSilently(objectOut);
 		}

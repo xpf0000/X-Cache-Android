@@ -11,7 +11,6 @@
 
 package com.robin.lazy.cache.disk.read;
 
-import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 
 import java.io.ByteArrayOutputStream;
@@ -51,11 +50,11 @@ public class BytesReadFromDisk implements ReadFromDisk<byte[]> {
 			}
 			bytes = baos.toByteArray();
 		} catch (FileNotFoundException e) {
-			LazyLogger.e(e, "从文件读取byte字节数组失败,没有找到文件");
+			//LazyLogger.e(e, "从文件读取byte字节数组失败,没有找到文件");
 		} catch (IOException e) {
-			LazyLogger.e(e, "从文件读取byte字节数组失败");
+			//LazyLogger.e(e, "从文件读取byte字节数组失败");
 		} catch (Exception e) {
-			LazyLogger.e(e, "从文件读取byte字节数组失败");
+			//LazyLogger.e(e, "从文件读取byte字节数组失败");
 		} finally {
 			IoUtils.closeSilently(input);
 			IoUtils.closeSilently(baos);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -78,7 +78,7 @@ public class IpUtil
         }
         catch (SocketException ex)
         {
-            LazyLogger.e("IpUtil", ex);
+            //LazyLogger.e("IpUtil", ex);
         }
         return "";
     }

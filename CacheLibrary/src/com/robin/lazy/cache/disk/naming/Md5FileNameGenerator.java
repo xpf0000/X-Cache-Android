@@ -15,8 +15,6 @@
  *******************************************************************************/
 package com.robin.lazy.cache.disk.naming;
 
-import com.robin.lazy.logger.LazyLogger;
-
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -46,7 +44,6 @@ public class Md5FileNameGenerator implements FileNameGenerator {
 			digest.update(data);
 			hash = digest.digest();
 		} catch (NoSuchAlgorithmException e) {
-			LazyLogger.e(e, "");
 		}
 		return hash;
 	}

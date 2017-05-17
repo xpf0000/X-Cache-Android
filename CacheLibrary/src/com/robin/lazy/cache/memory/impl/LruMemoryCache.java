@@ -13,7 +13,7 @@ package com.robin.lazy.cache.memory.impl;
 
 import android.support.v4.util.LruCache;
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -66,9 +66,9 @@ public class LruMemoryCache implements MemoryCache {
 				lruCache.put(key, value);
 				return true;
 			} catch (NullPointerException e) {
-				LazyLogger.e(e, "put to menory fail");
+				//LazyLogger.e(e, "put to menory fail");
 			} catch (Exception e) {
-				LazyLogger.e(e, "put to menory fail");
+				//LazyLogger.e(e, "put to menory fail");
 			}
 		}
 		return false;
@@ -90,11 +90,11 @@ public class LruMemoryCache implements MemoryCache {
 			try {
 				values = (V) lruCache.get(key);
 			} catch (NullPointerException e) {
-				LazyLogger.e(e, "缓存数据不存在，不能强制类型转换");
+				//LazyLogger.e(e, "缓存数据不存在，不能强制类型转换");
 			} catch (ClassCastException e) {
-				LazyLogger.e(e, "强制类型转换错误,不符合的类型");
+				//LazyLogger.e(e, "强制类型转换错误,不符合的类型");
 			} catch (Exception e) {
-				LazyLogger.e(e, "");
+				//LazyLogger.e(e, "");
 			}
 			return values;
 		}

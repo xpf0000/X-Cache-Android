@@ -14,9 +14,6 @@
  * limitations under the License.
  *******************************************************************************/
 package com.robin.lazy.cache.disk.impl.ext;
-
-import com.robin.lazy.logger.LazyLogger;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -117,7 +114,6 @@ public class LruDiskCache implements DiskCache {
 			cache = DiskLruCache.open(cacheDir, 1, 1, cacheMaxSize,
 					cacheMaxFileCount);
 		} catch (IOException e) {
-			LazyLogger.e(e, "");
 			if (reserveCacheDir != null) {
 				initCache(reserveCacheDir, null, cacheMaxSize,
 						cacheMaxFileCount);
@@ -146,7 +142,6 @@ public class LruDiskCache implements DiskCache {
 			snapshot = cache.get(getKey(key));
 			return snapshot == null ? null : snapshot.getFile(0);
 		} catch (IOException e) {
-			LazyLogger.e(e, "");
 			return null;
 		} finally {
 			if (snapshot != null) {
@@ -195,7 +190,6 @@ public class LruDiskCache implements DiskCache {
 		try {
 			return cache.remove(getKey(key));
 		} catch (IOException e) {
-			LazyLogger.e(e, "");
 			return false;
 		}
 	}
@@ -205,7 +199,6 @@ public class LruDiskCache implements DiskCache {
 		try {
 			cache.close();
 		} catch (IOException e) {
-			LazyLogger.e(e, "");
 		}
 		cache = null;
 	}
@@ -215,13 +208,11 @@ public class LruDiskCache implements DiskCache {
 		try {
 			cache.delete();
 		} catch (IOException e) {
-			LazyLogger.e(e, "");
 		}
 		try {
 			initCache(cache.getDirectory(), reserveCacheDir,
 					cache.getMaxSize(), cache.getMaxFileCount());
 		} catch (IOException e) {
-			LazyLogger.e(e, "");
 		}
 	}
 

@@ -12,7 +12,7 @@
 package com.robin.lazy.cache.disk.write;
 
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 
 import java.io.IOException;
@@ -35,9 +35,9 @@ public class BytesWriteInDisk extends WriteInDisk<byte[]> {
 			out.write(values);
 			out.flush();
 		} catch (IOException e) {
-			LazyLogger.e(e, "byte数组写入文件错误");
+			//LazyLogger.e(e, "byte数组写入文件错误");
 		} catch (Exception e) {
-			LazyLogger.e(e, "byte数组写入文件错误");
+			//LazyLogger.e(e, "byte数组写入文件错误");
 		}
 		IoUtils.closeSilently(out);
 		return isSucess;

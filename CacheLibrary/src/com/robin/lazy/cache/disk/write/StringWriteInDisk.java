@@ -12,7 +12,7 @@
 package com.robin.lazy.cache.disk.write;
 
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 
 import java.io.IOException;
@@ -47,9 +47,9 @@ public class StringWriteInDisk extends WriteInDisk<String> {
 			writer.flush();
 			isSucce = true;
 		} catch (IOException e) {
-			LazyLogger.e(e, "String写入缓存错误");
+			//LazyLogger.e(e, "String写入缓存错误");
 		} catch (Exception e) {
-			LazyLogger.e(e, "String写入缓存错误");
+			//LazyLogger.e(e, "String写入缓存错误");
 		}finally {
 			IoUtils.closeSilently(writer);
 		}

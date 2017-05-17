@@ -11,7 +11,7 @@
 
 package com.robin.lazy.cache.disk.read;
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 
 import java.io.BufferedReader;
@@ -53,9 +53,9 @@ public class StringReadFromDisk implements ReadFromDisk<String> {
 			}
 			s = stBuffer.toString();
 		} catch (StreamCorruptedException e) {
-			LazyLogger.e(e, "读取String错误");
+			//LazyLogger.e(e, "读取String错误");
 		} catch (IOException e) {
-			LazyLogger.e(e, "读取String错误");
+			//LazyLogger.e(e, "读取String错误");
 		} finally {
 			IoUtils.closeSilently(read);
 		}

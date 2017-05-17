@@ -22,7 +22,7 @@ import com.robin.lazy.cache.disk.impl.BaseDiskCache;
 import com.robin.lazy.cache.disk.impl.ext.LruDiskCache;
 import com.robin.lazy.cache.disk.naming.FileNameGenerator;
 import com.robin.lazy.cache.disk.naming.HashCodeFileNameGenerator;
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.StorageUtils;
 
 import java.io.File;
@@ -66,7 +66,7 @@ public final class DiskCacheUtils {
 						diskCacheFileNameGenerator, diskCacheSize,
 						diskCacheFileCount);
 			} catch (IOException e) {
-				LazyLogger.e(e, "获取LruDiskCache错误");
+				//LazyLogger.e(e, "获取LruDiskCache错误");
 				// continue and create unlimited cache
 			}
 		}

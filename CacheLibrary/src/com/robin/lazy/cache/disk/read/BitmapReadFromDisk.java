@@ -17,7 +17,6 @@ import android.graphics.BitmapFactory.Options;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 
-import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 import com.robin.lazy.util.bitmap.ImageDecodingInfo;
 import com.robin.lazy.util.bitmap.ImageScaleType;
@@ -64,7 +63,6 @@ public class BitmapReadFromDisk implements ReadFromDisk<Bitmap> {
 			IoUtils.closeSilently(imageStream);
 		}
 		if (decodedBitmap == null || imageInfo == null) {
-			LazyLogger.e("Image can't be decoded [%s]");
 		} else {
 			decodedBitmap = considerExactScaleAndOrientatiton(decodedBitmap,
 					imDecodeInfor, imageInfo.exif.rotation,
@@ -152,7 +150,6 @@ public class BitmapReadFromDisk implements ReadFromDisk<Bitmap> {
 					break;
 			}
 		} catch (IOException e) {
-			LazyLogger.e("e", "Can't read EXIF tags from file [%s]", filePath);
 		}
 		return new ExifInfo(rotation, flip);
 	}

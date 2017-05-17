@@ -13,8 +13,6 @@ package com.robin.lazy.cache;
 
 import android.text.TextUtils;
 
-import com.robin.lazy.logger.LazyLogger;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -97,8 +95,6 @@ public class LoadCacheTask {
 	public <V> boolean insert(String key, CachePutEntity<V> cachePutEntity,
 			V value, long maxLimitTime) {
 		if (diskCache == null || memoryCache == null || cachePutEntity == null) {
-			LazyLogger.e(new NullPointerException(),
-					"diskCache or memoryCache or cachePutEntity is null");
 			return false;
 		}
 		boolean isSuccess = false;
@@ -133,9 +129,7 @@ public class LoadCacheTask {
 				}	
 			}
 		} catch (IOException e) {
-			LazyLogger.e(e, "文件写入磁盘失败");
 		} catch (Exception e) {
-			LazyLogger.e(e, "文件写入磁盘失败");
 		}
 		return isSuccess;
 	}
@@ -167,8 +161,6 @@ public class LoadCacheTask {
 	 */
 	public <V> V query(String key, CacheGetEntity<V> cacheGetEntity) {
 		if (diskCache == null || memoryCache == null || cacheGetEntity == null) {
-			LazyLogger.e(new NullPointerException(),
-					"diskCache or memoryCache or cacheGetEntity is null");
 			return null;
 		}
 		V value = null;
@@ -190,7 +182,6 @@ public class LoadCacheTask {
 				}
 			}
 		} catch (Exception e) {
-			LazyLogger.e(e, "缓存缓存数据错误");
 		}
 		return value;
 	}
@@ -205,8 +196,6 @@ public class LoadCacheTask {
 	 */
 	public boolean delete(String key) {
 		if (diskCache == null || memoryCache == null) {
-			LazyLogger.e(new NullPointerException(),
-					"diskCache or memoryCache or cachePutEntity is null");
 			return false;
 		}
 		boolean isSuccess = false;
@@ -231,8 +220,6 @@ public class LoadCacheTask {
 	 */
 	public long size(){
 		if (diskCache == null || memoryCache == null) {
-			LazyLogger.e(new NullPointerException(),
-					"diskCache or memoryCache or cachePutEntity is null");
 			return 0;
 		}
 		String mapString=memoryCache.snapshot().toString();

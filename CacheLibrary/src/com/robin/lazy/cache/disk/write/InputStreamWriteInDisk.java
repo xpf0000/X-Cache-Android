@@ -12,7 +12,7 @@
 package com.robin.lazy.cache.disk.write;
 
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 
 import java.io.IOException;
@@ -48,9 +48,9 @@ public class InputStreamWriteInDisk extends WriteInDisk<InputStream> {
 					bufferSize);
 			out.flush();
 		} catch (IOException e) {
-			LazyLogger.e(e, "InputStream写入缓存错误");
+			//LazyLogger.e(e, "InputStream写入缓存错误");
 		} catch (Exception e) {
-			LazyLogger.e(e, "InputStream写入缓存错误");
+			//LazyLogger.e(e, "InputStream写入缓存错误");
 		} finally {
 			IoUtils.closeSilently(out);
 		}

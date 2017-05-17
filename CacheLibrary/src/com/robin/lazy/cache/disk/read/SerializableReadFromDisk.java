@@ -11,7 +11,7 @@
 
 package com.robin.lazy.cache.disk.read;
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 
 import java.io.File;
@@ -40,11 +40,11 @@ public class SerializableReadFromDisk<V extends Serializable> implements ReadFro
 			read = new ObjectInputStream(new FileInputStream(file));
 			result=(V)read.readObject();
 		} catch (StreamCorruptedException e) {
-			LazyLogger.e(e, "读取Serialzable错误");
+			//LazyLogger.e(e, "读取Serialzable错误");
 		} catch (IOException e) {
-			LazyLogger.e(e, "读取Serialzable错误");
+			//LazyLogger.e(e, "读取Serialzable错误");
 		} catch (ClassNotFoundException e) {
-			LazyLogger.e(e, "读取Serialzable错误");
+			//LazyLogger.e(e, "读取Serialzable错误");
 		}finally{
 			IoUtils.closeSilently(read);
 		}

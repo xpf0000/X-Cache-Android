@@ -29,7 +29,6 @@ import com.robin.lazy.cache.entity.CacheGetEntity;
 import com.robin.lazy.cache.entity.CachePutEntity;
 import com.robin.lazy.cache.memory.MemoryCache;
 import com.robin.lazy.cache.util.MemoryCacheUtils;
-import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 import com.robin.lazy.util.bitmap.ImageDecodingInfo;
 
@@ -313,7 +312,6 @@ public class CacheLoaderManager {
 	 */
 	private boolean isInitialize(){
 		if(cacheTask==null){
-			LazyLogger.e("缓存任务没有初始化");
 			return false;
 		}
 		return true;

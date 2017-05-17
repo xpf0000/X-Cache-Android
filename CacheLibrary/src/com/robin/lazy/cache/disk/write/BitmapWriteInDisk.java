@@ -13,7 +13,7 @@ package com.robin.lazy.cache.disk.write;
 
 import android.graphics.Bitmap;
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 import com.robin.lazy.util.IoUtils;
 
 import java.io.BufferedOutputStream;
@@ -60,7 +60,7 @@ public class BitmapWriteInDisk extends WriteInDisk<Bitmap> {
 					os);
 			os.flush();
 		} catch (Exception e) {
-			LazyLogger.e(e, "Bitmap写入缓存错误");
+			//LazyLogger.e(e, "Bitmap写入缓存错误");
 		} finally {
 			IoUtils.closeSilently(os);
 			if (isRecycle) {

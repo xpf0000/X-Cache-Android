@@ -15,7 +15,7 @@
  *******************************************************************************/
 package com.robin.lazy.cache.disk.impl;
 
-import com.robin.lazy.logger.LazyLogger;
+//import com.robin.lazy.logger.LazyLogger;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -95,7 +95,7 @@ public class BaseDiskCache implements DiskCache {
                 return size;     
             }     
         } else {     
-            LazyLogger.e("文件或者文件夹不存在，请检查路径是否正确！");
+            //LazyLogger.e("文件或者文件夹不存在，请检查路径是否正确！");
             return 0;     
         }     
     }
